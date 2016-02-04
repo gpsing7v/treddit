@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1><b>T-Reddit</b></h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Hot Topics</th>
+      <th>Politics</th>
+      <th>Religion</th>
+      <th>Gaming</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @blog_posts.each do |blog_post| %>
+      <tr>
+        <td><%= blog_post.hot_topics %></td>
+        <td><%= blog_post.politics %></td>
+        <td><%= blog_post.religion %></td>
+        <td><%= blog_post.gaming %></td>
+        <td><%= link_to 'Show', blog_post %></td>
+        <td><%= link_to 'Edit', edit_blog_post_path(blog_post) %></td>
+        <td><%= link_to 'Destroy', blog_post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Blog post', new_blog_post_path %>

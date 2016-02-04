@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+.cant-see-me {
+	display: none;
+}
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
